@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hexagon Color</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      let container = document.querySelector(".container");
+      for (let i = 0; i < 12; i++) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+        for (let j = 0; j < 20; j++) {
+          let box = document.createElement("div");
+          box.classList.add("box");
+          box.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+          row.appendChild(box);
+        }
+        container.appendChild(row);
+      }
+      // const boxes = document.querySelectorAll(".box");
+
+      // boxes.forEach((box) => {
+      //   box.addEventListener("mouseenter", () => {
+      //     const hue = Math.random() * 360;
+      //     box.style.background = `hsl(${hue}, 100%, 50%)`;
+      //     box.style.transition = "0s";
+      //   });
+      // });
+      const boxes = document.querySelectorAll(".box");
+      boxes.forEach((box) => {
+        box.addEventListener("mouseenter", function handler() {
+          const hue = Math.random() * 360;
+          box.style.background = `hsl(${hue}, 100%, 50%)`;
+          box.style.transition = "background 1s ease";
+          box.removeEventListener("mouseenter", handler); // bir daha değişmesin
+        });
+      });
+    </script>
+  </body>
+</html>
