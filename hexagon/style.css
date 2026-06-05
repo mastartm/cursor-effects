@@ -10,6 +10,8 @@ body {
 .container {
   position: relative;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 .row {
   display: inline-flex;
@@ -21,8 +23,8 @@ body {
 }
 .row .box {
   position: relative;
-  width: 100px;
-  height: 110px;
+  width: 60px;
+  height: 66px;
   background: #0c0c0c;
   margin: 2px;
   transition: background 1s ease;
