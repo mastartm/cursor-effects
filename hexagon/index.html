@@ -10,10 +10,12 @@
     <div class="container"></div>
     <script>
       let container = document.querySelector(".container");
-      for (let i = 0; i < 12; i++) {
+      const cols = Math.ceil(window.innerWidth / 104);
+      const rows = Math.ceil(window.innerHeight / 80);
+      for (let i = 0; i < rows; i++) {
         let row = document.createElement("div");
         row.classList.add("row");
-        for (let j = 0; j < 20; j++) {
+        for (let j = 0; j < cols; j++) {
           let box = document.createElement("div");
           box.classList.add("box");
           box.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
